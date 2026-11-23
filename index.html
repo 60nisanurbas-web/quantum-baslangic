@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eğitim Cüzdanı Oluşturucu</title>
+</head>
+<body>
+
+    <h1>Ethereum Eğitim Cüzdanı</h1>
+
+    <p>
+        Bu uygulama, güvenli rastgelelik kullanarak
+        eğitim amaçlı bir Ethereum cüzdanı oluşturur.
+    </p>
+
+    <button id="olusturBtn">
+        Yeni Eğitim Cüzdanı Oluştur
+    </button>
+
+    <h2>Cüzdan Oluşturma Aşamaları</h2>
+
+    <p>1. Entropi: <span id="entropi">Henüz oluşturulmadı</span></p>
+    <p>2. Mnemonic (12 kelime): <span id="mnemonic">Henüz oluşturulmadı</span></p>
+    <button id="mnemonicGosterBtn" type="button">Mnemonic'i Göster / Gizle</button>
+    
+    <p>3. Seed: <span id="seed">Henüz oluşturulmadı</span></p>
+<button id="seedGosterBtn" type="button">Seed'i Göster / Gizle</button>
+    <p>4. Türetme yolu: m/44'/60'/0'/0/0</p>
+    <p>5. Private Key: <span id="privateKey">Henüz oluşturulmadı</span></p>
+    <button id="privateKeyGosterBtn" type="button">Private Key'i Göster / Gizle</button>
+    <p>6. Public Key: <span id="publicKey">Henüz oluşturulmadı</span></p>
+    <p>7. Ethereum Adresi: <span id="adres">Henüz oluşturulmadı</span></p>
+   
+    <script type="module" src="script.js"></script>
+</body>
+</html>

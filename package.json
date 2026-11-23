@@ -1,0 +1,30 @@
+{
+  "name": "quantum-baslangic",
+  "version": "1.0.0",
+  "description": "Quantum Başlangıç",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/60nisanurbas-web/quantum-baslangic.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/60nisanurbas-web/quantum-baslangic/issues"
+  },
+  "homepage": "https://github.com/60nisanurbas-web/quantum-baslangic#readme",
+  "dependencies": {
+    "@noble/hashes": "^2.4.0",
+    "@noble/secp256k1": "^3.2.0",
+    "@scure/bip32": "^2.4.0",
+    "@scure/bip39": "^2.4.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.8"
+  }
+}
