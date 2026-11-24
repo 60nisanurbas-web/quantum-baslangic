@@ -144,3 +144,63 @@ Benim Yorumum: Adresi Paylaşmak Neden Harcama Yetkisi Vermez?
 Cüzdan adresi, varlık almak ve blokzincir üzerindeki işlemleri görüntülemek için kullanılan herkese açık bir bilgidir. Ancak bir hesaptan varlık göndermek için işlemin ilgili private key ile imzalanması gerekir. Bu nedenle yalnızca cüzdan adresini bilen bir kişi hesaptaki varlıkları harcayamaz.
 
 
+
+## İP 15: 
+
+## Test USDC Edin ve İki Transferi Karşılaştır
+
+Amaç: Native varlık ile token arasındaki farkı uygulamalı olarak gözlemlemek.
+
+1. Test USDC edinme
+
+Circle’ın resmî Testnet Faucet sayfasından Ethereum Sepolia ağını seçerek 20 test USDC edindim. Circle’ın resmî dokümantasyonundan Ethereum Sepolia USDC sözleşme adresini buldum.
+
+Faucet: https://faucet.circle.com/
+
+Token sözleşme adresi:
+
+0x1c7D4B196Cb0C7B01d743Fbc6116a902379C7238
+
+Bu sözleşme adresini MetaMask’e özel token olarak ekledim ve 20 USDC bakiyemi görüntüledim.
+
+2. İkinci eğitim hesabını oluşturma
+
+MetaMask üzerinde Account 2 isimli ikinci bir eğitim hesabı oluşturdum. Account 1 hesabımdan Account 2 hesabıma 0.01 Sepolia ETH ve 5 test USDC gönderdim. Sonraki işlemler için ilk hesabımda yeterli miktarda test ETH bıraktım.
+
+Her iki işlemin de başarılı olduğunu Sepolia Etherscan üzerinden doğruladım.
+
+3. İşlemlerin karşılaştırılması
+
+Özellik	        ETH transferi	         USDC transferi
+Status	        Success	                 Success
+From	        Account 1	             Account 1
+To	            Account 2	             USDC sözleşmesi
+Value	        0.01 ETH	             0 ETH
+Input Data	    0x	                     transfer()
+Transaction Fee	0.0003069000034782 ETH	 0.000227668502580243 ETH
+Block	        12204971	             12204979
+Event	        Transfer	             Transfer
+Log Data	    10000000000000000	     5000000
+
+ETH transferinde To alanında doğrudan alıcı hesabın adresi bulunurken USDC transferinde USDC akıllı sözleşmesinin adresi bulunmaktadır.
+
+USDC transferinde Value alanının 0 ETH olmasının nedeni, Value alanının native ETH miktarını göstermesidir. Gönderilen 5 USDC ise token transferi ve event log alanlarında görülmektedir.
+
+ETH işleminde Input Data alanı boş (0x) iken USDC işleminde akıllı sözleşmenin transfer fonksiyonu çağrılmıştır.
+
+Her iki işlemde de Transfer event kaydı bulunmaktadır. ETH işlemindeki kayıt sistem adresinden, USDC işlemindeki kayıt ise USDC sözleşmesinden gelmektedir.
+
+4. Tokenı cüzdanda göstermek ile zincirde almak arasındaki fark
+
+Tokenı MetaMask’e eklemek, blokzincirde yeni bir işlem gerçekleştirmez ve token bakiyesini değiştirmez. Yalnızca mevcut token bakiyesinin cüzdan arayüzünde görüntülenmesini sağlar.
+
+Tokenı zincirde almak ise ilgili token bakiyesinin blokzincir üzerinde değişmesi anlamına gelir. Circle faucet üzerinden aldığım USDC, MetaMask’e özel token olarak eklemeden önce de zincirde hesabıma ait olabilir.
+
+## IP 15 - Benim yorumum:
+
+USDC gönderirken ücretin hangi bakiyeden karşılandığını nasıl gördünüz?
+
+5 USDC gönderdiğim işlemi Etherscan üzerinden incelediğimde Transaction Fee alanında 0.000227668502580243 ETH yazdığını gördüm. Bu sayede USDC transferi yapmama rağmen işlem ücretinin USDC bakiyemden değil, Sepolia ETH bakiyemden karşılandığını öğrendim. Ethereum ağında token transferlerinin işlem ücretleri ağın native varlığı olan ETH ile ödenmektedir.
+
+
+
