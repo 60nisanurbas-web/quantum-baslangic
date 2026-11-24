@@ -49,6 +49,8 @@ Git, GitHub, Visual Studio Code, MetaMask ve Remix IDE araçlarının hepsini il
 
 Visual Studio Code üzerinde proje klasörümü ve README dosyamı oluşturdum. Git komutlarını kullanarak değişikliklerimi kaydettim ve GitHub'a gönderdim. MetaMask cüzdanımı kurup Sepolia test ağını açtım. Ayrıca Remix IDE'yi inceleyerek Solidity dosyalarının nerede oluşturulduğunu öğrendim.
 
+
+
 ## IP 12 - Ethereum Eğitim Cüzdanı Oluşturucu
 
 Bu projede JavaScript kullanarak eğitim amaçlı bir Ethereum cüzdanı oluşturma uygulaması geliştirdim.
@@ -86,6 +88,7 @@ Bu nedenle mnemonic ve Private Key aynı şey değildir. Mnemonic genellikle bir
 Her ikisi de gizli tutulmalıdır.
 
 
+
 ## İP 13 
 
 ## MetaMask ile Ethereum Adresi Karşılaştırması
@@ -111,4 +114,33 @@ Geçerli bir mnemonic ile güvenli biçimde üretilmiş bir mnemonic aynı şey 
 Yaptığım deneyde sabit test verisinden oluşturulan mnemonic doğrulamadan geçmiştir. Fakat tahmin edilebilir olduğu için güvenli değildir.
 
 Bu nedenle güvenli bir mnemonic oluşturmak için kriptografik olarak güvenli rastgelelik kullanılmalıdır.
+
+
+
+## İP 14: Test ETH Kaynağını Kendin Bul
+
+Faucet Araştırması ve Test ETH Edinme
+
+MetaMask üzerinde Sepolia test ağını seçtim. Ethereum’un resmî dokümantasyonundan faucet kaynaklarını araştırdım.
+
+Alchemy, Google Cloud, QuickNode ve Sepolia PoW Faucet seçeneklerini inceledim. Gerçek ETH bakiyesi gerektiren seçenekleri tercih etmedim.
+
+Sepolia PoW Faucet kullanarak herhangi bir satın alma işlemi yapmadan 0.5325 test ETH edindim. Gelen bakiyeyi MetaMask üzerinden kontrol ettim ve işlemin başarılı olduğunu Sepolia Etherscan üzerinden doğruladım.
+
+* Faucet adresi: https://sepolia-faucet.pk910.de/
+* Ağ: Ethereum Sepolia
+* Alınan miktar: 0.5325 SepETH
+* İşlem durumu: Success
+* Blok numarası: 12204094
+
+PoW Faucet ile Sepolia’da Blok Üretmenin Farkı
+
+PoW faucet, ücretsiz test ETH dağıtmak için kullanıcının tarayıcısında hesaplama işlemleri gerçekleştirir. Bunun amacı kötüye kullanımı ve botları önlemektir.
+
+Bu hesaplamalar Sepolia ağında blok üretildiği anlamına gelmez. Sepolia, Proof of Stake konsensüs mekanizmasını kullanır. Faucet üzerindeki hesaplamalar yalnızca test ETH dağıtımının bir koşuludur.
+
+Benim Yorumum: Adresi Paylaşmak Neden Harcama Yetkisi Vermez?
+
+Cüzdan adresi, varlık almak ve blokzincir üzerindeki işlemleri görüntülemek için kullanılan herkese açık bir bilgidir. Ancak bir hesaptan varlık göndermek için işlemin ilgili private key ile imzalanması gerekir. Bu nedenle yalnızca cüzdan adresini bilen bir kişi hesaptaki varlıkları harcayamaz.
+
 
