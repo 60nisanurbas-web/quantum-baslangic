@@ -86,7 +86,16 @@ Bu nedenle mnemonic ve Private Key aynı şey değildir. Mnemonic genellikle bir
 Her ikisi de gizli tutulmalıdır.
 
 
-## İP 13 – Checksum Deneyi
+## İP 13 
+
+## MetaMask ile Ethereum Adresi Karşılaştırması
+
+Geliştirdiğim eğitim cüzdanı uygulamasındaki Ethereum adresi ile MetaMask’teki Ethereum adresini karşılaştırdım. Karşılaştırma sonucunda iki adresin eşleştiğini gözlemledim.
+
+Karşılaştırma sonucunu ekran görüntüsüyle belgeledim. Güvenlik nedeniyle ekran görüntüsünde mnemonic, seed, entropi ve private key bilgilerine yer vermedim.
+![Adres Karşılaştırması](ip13-adres-karsilastirma.png)
+
+## Checksum Deneyi
 
 BIP39 doğrulama işlemi için @scure/bip39 kütüphanesinin validateMnemonic fonksiyonunu kullandım.
 
