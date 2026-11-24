@@ -43,7 +43,7 @@ Solidity: Ethereum gibi uyumlu blokzincirlerde çalışan akıllı sözleşmeler
 
 
 
-## IP 11 – Benim Yorumum
+## IP 11 – Benim Yorumum:
 
 Git, GitHub, Visual Studio Code, MetaMask ve Remix IDE araçlarının hepsini ilk kez kullandım. Başlangıçta bu araçların ne işe yaradığını bilmiyordum. Yapay zekadan yardım alarak kurulumları adım adım gerçekleştirdim. 
 
@@ -73,8 +73,7 @@ Güvenlik
 
 Uygulama eğitim amaçlıdır. Mnemonic, seed ve özel anahtar varsayılan olarak gizlenir ve kullanıcı isterse ekranda görüntülenebilir. Gizli bilgilerin gerçek kullanımda paylaşılmaması gerekir.
    
-## IP 12 – Benim Yorumum
-Mnemonic ile Private Key Arasındaki Fark
+## IP 12 – Benim Yorumum: Mnemonic ile Private Key Arasındaki Fark
 
 Mnemonic, cüzdanı yedeklemek ve gerektiğinde yeniden oluşturmak için kullanılan, genellikle 12 veya 24 kelimeden oluşan bir ifadedir.
 
@@ -85,4 +84,22 @@ Mnemonic kelimelerinden bir seed oluşturulabilir ve bu seed kullanılarak farkl
 Bu nedenle mnemonic ve Private Key aynı şey değildir. Mnemonic genellikle birden fazla hesabı kurtarmamızı sağlarken Private Key belirli bir hesabı kontrol etmemizi sağlar.
 
 Her ikisi de gizli tutulmalıdır.
+
+
+## İP 13 – Checksum Deneyi
+
+BIP39 doğrulama işlemi için @scure/bip39 kütüphanesinin validateMnemonic fonksiyonunu kullandım.
+
+* Orijinal örnek mnemonic doğrulandığında true sonucu alındı.
+* İlk kelime, BIP39 kelime listesinde bulunan başka bir kelimeyle değiştirildiğinde false sonucu alındı.
+
+Bu deneyde checksum mekanizmasının kelime değişikliğinden kaynaklanan hatayı tespit edebildiğini gözlemledim. Ancak tek kelime değişikliği her zaman geçersiz bir mnemonic oluşturmaz. Bu nedenle checksum’ın hata yakalama kapasitesi sınırlıdır.
+
+## IP 13 - Benim Yorumum: Geçerli ve Güvenli Mnemonic Arasındaki Fark
+
+Geçerli bir mnemonic ile güvenli biçimde üretilmiş bir mnemonic aynı şey değildir. Bir mnemonic’in geçerli olması, BIP39 kelime listesine ve checksum kurallarına uygun olduğunu gösterir. Ancak bu durum, mnemonic’in güvenli ve tahmin edilemez olduğunu kanıtlamaz.
+
+Yaptığım deneyde sabit test verisinden oluşturulan mnemonic doğrulamadan geçmiştir. Fakat tahmin edilebilir olduğu için güvenli değildir.
+
+Bu nedenle güvenli bir mnemonic oluşturmak için kriptografik olarak güvenli rastgelelik kullanılmalıdır.
 

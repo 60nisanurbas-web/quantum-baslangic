@@ -3,6 +3,7 @@ import {Point} from "@noble/secp256k1"
 import { keccak_256 } from "@noble/hashes/sha3.js";
 import { HDKey } from "@scure/bip32";
 import { mnemonicToSeedSync } from "@scure/bip39";
+import { validateMnemonic } from "@scure/bip39";
 import { wordlist } from "@scure/bip39/wordlists/english.js";
 const buton = document.getElementById("olusturBtn");
 
@@ -94,3 +95,19 @@ seedButonu.onclick = function() {
     }
 };
 });
+const testMnemonic = entropyToMnemonic(
+    new Uint8Array(16), wordlist
+);
+
+console.log("Checksum test sonucu:",
+    validateMnemonic(testMnemonic, wordlist)
+);
+const testKelimeler = testMnemonic.split(" ");
+
+testKelimeler[0] = "zoo";
+
+const degistirilmisMnemonic = testKelimeler.join(" ");
+
+console.log("Degistirilmis checksum sonucu:",
+    validateMnemonic(degistirilmisMnemonic, wordlist)
+);
