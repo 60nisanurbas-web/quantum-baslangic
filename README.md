@@ -202,5 +202,42 @@ USDC gönderirken ücretin hangi bakiyeden karşılandığını nasıl gördün�
 
 5 USDC gönderdiğim işlemi Etherscan üzerinden incelediğimde Transaction Fee alanında 0.000227668502580243 ETH yazdığını gördüm. Bu sayede USDC transferi yapmama rağmen işlem ücretinin USDC bakiyemden değil, Sepolia ETH bakiyemden karşılandığını öğrendim. Ethereum ağında token transferlerinin işlem ücretleri ağın native varlığı olan ETH ile ödenmektedir.
 
+## IP 16 
 
+## İkinci Kayıt Denemesi
+Aynı cüzdan adresiyle register fonksiyonunu ikinci kez çağırmayı denedim. Remix, gas tahmini sırasında “Bu cuzdan zaten kayitli” hatasını verdi.
+
+Hata, işlem blokzincire gönderilmeden önce oluştu. Bu nedenle yeni bir transaction hash oluşmadı ve gas ücreti harcanmadı.
+
+Bu deney sonucunda akıllı sözleşmenin aynı cüzdan adresinden birden fazla kayıt yapılmasını engellediğini doğruladım.
+
+## Kontrol Sitesi ile Doğrulama
+
+Takımın kontrol sitesini açtım ve kaydımın listede göründüğünü doğruladım.
+
+## IP 16 - Benim Yorumum
+
+İsmin kontrol sitesinde görünmesi ile blokzincirde kaydedilmiş olması aynı kontrol değildir. Blokzincir asıl kayıt kaynağıdır. Web sitesi ise bu kayıtları okuyup kullanıcıya gösteren bir arayüzdür. Web sitesinde bağlantı veya veri görüntüleme hatası oluşsa bile blokzincirdeki başarılı kayıt korunur.
+
+
+
+## İP 17 – Explorer ile Kaydı Doğrula
+
+Sepolia Etherscan üzerinden takım sözleşmesine yaptığım başarılı kayıt işlemini inceledim.
+
+* From: İşlemi gönderdiğim cüzdanın adresi
+* To: Kayıt işlemini gerçekleştirdiğim QuantumKayit akıllı sözleşmesinin adresi
+* Gas Price: Kayıt işleminin gerçekleştirilmesi sırasında kullanılan hesaplama birimi miktarı
+* Transaction Fee: İşlemin gerçekleştirilmesi için cüzdanımdan ödenen Sepolia ETH miktarı
+* Nonce: Cüzdanımdan gönderilen işlemlerin sıra numarasını ifade eder
+* Status: İşlemin başarılı olup olmadığını gösterir
+* Input Data: Akıllı sözleşmeye gönderdiğim fonksiyon ve parametre bilgilerinin kodlanmış hâli 
+
+## İP 17 -Benim Yorumum
+
+Input Data, register fonksiyonuna hangi bilgiyi gönderdiğimi gösterdi. 
+Registered event, kayıt işlemi sırasında hangi olayın gerçekleştiğini gösterdi. 
+Mevcut state ise kayitliMi ve tumKayitlar fonksiyonları aracılığıyla kaydımın sözleşmede bulunup bulunmadığını doğrulamamı sağladı.
+
+Bu üç bilgi sırasıyla işlemin girdisini, gerçekleşen olayı ve sözleşmenin güncel durumunu gösterdi.
 
