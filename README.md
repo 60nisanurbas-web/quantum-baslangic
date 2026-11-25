@@ -241,3 +241,35 @@ Mevcut state ise kayitliMi ve tumKayitlar fonksiyonları aracılığıyla kaydı
 
 Bu üç bilgi sırasıyla işlemin girdisini, gerçekleşen olayı ve sözleşmenin güncel durumunu gösterdi.
 
+
+## İP 18 
+- Deploy Transaction Hash:0x3c08dfcbf50a7ec1512b5f91be7fcaa47f0498eb95d64675558f718b27464bd7
+
+## Yeni Sözleşmenin Başlangıç Durumu
+
+- kayitliMi: false
+- tumKayitlar: Boş liste
+
+Yeni oluşturduğum sözleşmede henüz hiçbir kayıt
+bulunmadığını doğruladım. Takım sözleşmesindeki
+kayıtlar yeni sözleşmeye aktarılmadı.
+
+## Deploy ve At Address / Add Contract Farkı
+
+Deploy, blokzincir üzerinde yeni bir akıllı sözleşme
+oluşturur. Yeni bir sözleşme adresi oluşur ve gas
+ücreti ödenir.
+
+At Address / Add Contract ise daha önce yayınlanmış
+bir sözleşmeye adresi üzerinden bağlanmayı sağlar.
+Yeni bir sözleşme oluşturmaz ve bağlanmak için
+gas ücreti ödenmez.
+
+## İP 18 - Benim Yorumum
+
+Her akıllı sözleşmenin kendine ait bir adresi ve
+veri depolama alanı vardır. Kaynak kodları aynı olsa
+bile sözleşmelerin tuttukları veriler birbirinden
+bağımsızdır. Bu nedenle takım sözleşmesindeki
+kayıtlar kendi oluşturduğum sözleşmeye otomatik
+olarak aktarılmaz.
