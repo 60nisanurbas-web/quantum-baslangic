@@ -273,3 +273,18 @@ bile sözleşmelerin tuttukları veriler birbirinden
 bağımsızdır. Bu nedenle takım sözleşmesindeki
 kayıtlar kendi oluşturduğum sözleşmeye otomatik
 olarak aktarılmaz.
+
+## Remix ve Etherscan
+Remix ve Etherscan farklı arayüzler olsa da aynı
+blokzincir ağı üzerindeki akıllı sözleşmelerle
+etkileşim kurabilir. MetaMask aracılığıyla işlemler
+imzalanır ve Sepolia ağına gönderilir.
+
+## Benim Yorumum
+Aynı cüzdan takım sözleşmesine ikinci kez
+kaydolamazken kendi sözleşmeme kaydolabildim.
+Çünkü iki sözleşmenin adresleri ve depolama
+alanları farklıdır. Her sözleşme kendi kayıtlarını
+bağımsız olarak tutar.
+Kendi sözleşmemdeki kayıt takımın kontrol sitesinde
+görünmez. Çünkü site yalnızca takım sözleşmesini izler.
