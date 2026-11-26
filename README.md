@@ -316,3 +316,23 @@ engellenmemektedir.
 
 
 
+## IP 21 – Kapasite ve Kayıt Kuralları
+
+Test Sonuçları
+
+Deneme	                        Beklenen sonuç	    Gözlemlenen sonuç
+İlk geçerli kayıt	            Kabul, toplam 1 	Kabul, toplam 1 oldu
+Aynı hesaptan tekrar kayıt   	Ret, toplam 1	    Ret, toplam 1 oldu
+Yeni hesaptan boş ad        	Ret, toplam 1	    Ret, toplam 1 oldu
+İkinci ve üçüncü geçerli kayıt	Kabul, toplam 3	    Kabul, toplam 3 oldu
+Dördüncü farklı hesabın kaydı	Ret, toplam 3	    Ret, toplam 3 oldu
+
+Bütün testler Remix VM ortamında başarıyla gerçekleştirildi. Reddedilen işlemler toplam kayıt sayısını değiştirmedi.
+
+## IP 21 - Benim Yorumum
+
+Adres başına sınır neden gerçek kişi sayısını garanti etmez?
+
+Bir kişi birden fazla cüzdan adresine sahip olabilir. Akıllı sözleşme kişilerin gerçek kimliklerini değil, cüzdan adreslerini kontrol eder. Bu nedenle aynı kişi farklı adresler kullanarak birden fazla kayıt oluşturabilir.
+
+
