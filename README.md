@@ -288,3 +288,31 @@ alanları farklıdır. Her sözleşme kendi kayıtlarını
 bağımsız olarak tutar.
 Kendi sözleşmemdeki kayıt takımın kontrol sitesinde
 görünmez. Çünkü site yalnızca takım sözleşmesini izler.
+ 
+
+
+ ## İP 20 
+
+## Test Sonuçları
+- Account 1: Katilimci1
+- Account 2: Katilimci2
+- Her iki kayıt başarıyla oluşturuldu ve okundu.
+
+## Verinin Saklanması
+Kayıtlar mapping(address => string) yapısı
+kullanılarak sözleşmenin storage alanında tutulur.
+
+## msg.sender'ın Görevi
+msg.sender, fonksiyonu çağıran hesabın adresini
+belirtir. Böylece kullanıcı yalnızca kendi adresi
+adına kayıt yapabilir. 
+
+## IP 20 - Benim Yorumum
+
+Bu ilk sürümde boş takma ad girilmesi, aynı
+hesabın tekrar kayıt yaparak önceki kaydını
+değiştirmesi ve sınırsız katılımcı kaydı
+engellenmemektedir.
+
+
+
