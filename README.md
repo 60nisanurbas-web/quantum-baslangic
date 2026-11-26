@@ -336,3 +336,51 @@ Adres başına sınır neden gerçek kişi sayısını garanti etmez?
 Bir kişi birden fazla cüzdan adresine sahip olabilir. Akıllı sözleşme kişilerin gerçek kimliklerini değil, cüzdan adreslerini kontrol eder. Bu nedenle aynı kişi farklı adresler kullanarak birden fazla kayıt oluşturabilir.
 
 
+
+## İP 22 – Görevli ve Giriş Kontrolü
+
+Eklenen Özellikler
+
+* Sözleşmeyi deploy eden adres görevli olarak belirlendi.
+* Yalnızca görevlinin giriş onayı vermesi sağlandı.
+* Kayıtsız katılımcıya giriş verilmesi engellendi.
+* Aynı katılımcının ikinci kez giriş yapması engellendi.
+* Katılımcının giriş durumu dışarıdan okunabilir hale getirildi.
+* Başarılı kayıt ve giriş işlemleri için KayitOlusturuldu ve GirisYapildi eventleri oluşturuldu.
+
+## Test Sonuçları
+
+Deneme	                            Beklenen sonuç   	       Gözlemlenen sonuç
+
+İlk geçerli kayıt	                Kabul, toplam 1 	       Kabul, toplam 1
+
+Aynı hesaptan tekrar kayıt	        Ret, toplam 1    	       Ret, toplam 1
+
+Boş takma adla kayıt	            Ret, toplam 1    	       Ret, toplam 1
+
+İkinci ve üçüncü geçerli kayıt	    Kabul, toplam 3 	       Kabul, toplam 3
+
+Dördüncü farklı hesabın kaydı	    Ret, toplam 3    	       Ret, toplam 3
+
+Görevlinin kayıtlı kişiye 
+giriş vermesi	                    Başarı ve event	           Başarı, true ve event
+
+Görevli olmayan hesabın  
+giriş vermesi	                    Ret, durum değişmez	       Ret, false
+
+Kayıtsız adrese giriş verilmesi	    Ret	                       Ret, false
+
+Aynı katılımcıya ikinci giriş	    Ret, ilk giriş korunur	   Ret, true
+
+* * *
+
+Bütün testler Remix VM ortamında başarıyla gerçekleştirildi. Başarılı kayıt ve giriş işlemlerinde ilgili eventlerin oluştuğu doğrulandı.
+
+## IP22 - Benim Yorumum
+
+Arayüzde düğmeyi gizlemek yerine yetkiyi sözleşmede denetlemek neden gerekir?
+
+Arayüzde bir düğmenin gizlenmesi, kullanıcının ilgili fonksiyonu doğrudan çağırmasını engellemez. Kullanıcı Remix veya başka araçlar üzerinden akıllı sözleşmeyle doğrudan etkileşime geçebilir. Bu nedenle yetki kontrolü sözleşmenin içerisinde yapılmalıdır. Böylece hangi arayüz kullanılırsa kullanılsın yetkisiz işlemler engellenir. 
+
+
+
