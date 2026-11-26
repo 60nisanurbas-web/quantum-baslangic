@@ -241,7 +241,7 @@ Mevcut state ise kayitliMi ve tumKayitlar fonksiyonları aracılığıyla kaydı
 
 Bu üç bilgi sırasıyla işlemin girdisini, gerçekleşen olayı ve sözleşmenin güncel durumunu gösterdi.
 
-
+git
 ## İP 18 
 - Deploy Transaction Hash:0x3c08dfcbf50a7ec1512b5f91be7fcaa47f0498eb95d64675558f718b27464bd7
 
@@ -265,7 +265,7 @@ bir sözleşmeye adresi üzerinden bağlanmayı sağlar.
 Yeni bir sözleşme oluşturmaz ve bağlanmak için
 gas ücreti ödenmez.
 
-## İP 18 - Benim Yorumum
+## İP 19 - Benim Yorumum
 
 Her akıllı sözleşmenin kendine ait bir adresi ve
 veri depolama alanı vardır. Kaynak kodları aynı olsa
