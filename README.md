@@ -350,27 +350,41 @@ Eklenen Özellikler
 
 ## Test Sonuçları
 
-Deneme	                            Beklenen sonuç   	       Gözlemlenen sonuç
+İlk geçerli kayıt	                
+Beklenen sonuç : Kabul, toplam 1 	       
+Gözlemlenen sonuç : Kabul, toplam 1 oldu
 
-İlk geçerli kayıt	                Kabul, toplam 1 	       Kabul, toplam 1
+Aynı hesaptan tekrar kayıt	        
+Beklenen sonuç : Ret, toplam 1    	       
+Gözlemlenen sonuç : Ret, toplam 1 oldu
 
-Aynı hesaptan tekrar kayıt	        Ret, toplam 1    	       Ret, toplam 1
+Boş takma adla kayıt	            
+Beklenen sonuç : Ret, toplam 1    	       
+Gözlemlenen sonuç : Ret, toplam 1 oldu
 
-Boş takma adla kayıt	            Ret, toplam 1    	       Ret, toplam 1
+İkinci ve üçüncü geçerli kayıt	    
+Beklenen sonuç : Kabul, toplam 3 	       
+Gözlemlenen sonuç : Kabul, toplam 3 oldu
 
-İkinci ve üçüncü geçerli kayıt	    Kabul, toplam 3 	       Kabul, toplam 3
+Dördüncü farklı hesabın kaydı	    
+Beklenen sonuç : Ret, toplam 3    	       
+Gözlemlenen sonuç : Ret, toplam 3 oldu
 
-Dördüncü farklı hesabın kaydı	    Ret, toplam 3    	       Ret, toplam 3
+Görevlinin kayıtlı kişiye giriş vermesi	                    
+Beklenen sonuç : Başarı ve event	           
+Gözlemlenen sonuç : Başarı, true ve event oldu
 
-Görevlinin kayıtlı kişiye 
-giriş vermesi	                    Başarı ve event	           Başarı, true ve event
+Görevli olmayan hesabın giriş vermesi	                    
+Beklenen sonuç : Ret, durum değişmez	       
+Gözlemlenen sonuç : Ret, false oldu
 
-Görevli olmayan hesabın  
-giriş vermesi	                    Ret, durum değişmez	       Ret, false
+Kayıtsız adrese giriş verilmesi	    
+Beklenen sonuç : Ret	                       
+Gözlemlenen sonuç : Ret, false oldu
 
-Kayıtsız adrese giriş verilmesi	    Ret	                       Ret, false
-
-Aynı katılımcıya ikinci giriş	    Ret, ilk giriş korunur	   Ret, true
+Aynı katılımcıya ikinci giriş	    
+Beklenen sonuç : Ret, ilk giriş korunur	   
+Gözlemlenen sonuç : Ret, true oldu 
 
 * * *
 
