@@ -398,3 +398,58 @@ Arayüzde bir düğmenin gizlenmesi, kullanıcının ilgili fonksiyonu doğrudan
 
 
 
+## İP 23 – Etkinlik Sözleşmesini Sepolia’ya Taşıma
+
+Sözleşme Bilgileri
+
+* Sözleşme adı: EtkinlikKayitV3
+* Ağ: Sepolia Testnet
+* Chain ID: 11155111
+* Sözleşme adresi: [Sözleşme adresini yapıştır]
+* Deploy TX Hash: [Deploy hash’ini yapıştır]
+* ABI dosyası: EtkinlikKayitV3-ABI.json
+* Görevli: Birinci eğitim hesabı
+
+Gerçekleştirilen İşlemler
+
+İP 22 kapsamında geliştirilen etkinlik sözleşmesi birinci eğitim hesabı kullanılarak Sepolia test ağına deploy edildi.
+
+İkinci eğitim hesabıyla Katilimci2 takma adı kullanılarak kayıt oluşturuldu. Ardından birinci eğitim hesabıyla katılımcının giriş işlemi onaylandı.
+
+Kayıt ve giriş işlemlerinin başarılı olduğu Sepolia Etherscan üzerinden doğrulandı.
+
+## Kontrol Sonuçları
+
+Başlangıçtaki toplam kayıt	
+Sonuç :0
+
+Görevli adresi	
+Sonuç :Birinci eğitim hesabı
+
+Katılımcının takma adı	
+Sonuç :Katilimci2
+
+kayitliMi	
+Sonuç :true
+
+girisYaptiMi	
+Sonuç :
+
+Son toplam kayıt	
+Sonuç :1
+
+Kayıt işlemi	
+Sonuç :Success
+
+Giriş işlemi	
+Sonuç :Success
+
+Yerel ortamda oluşturulan üç kaydın Sepolia’daki yeni sözleşmeye taşınmadığı doğrulandı.
+
+## IP 23 - Benim Yorumum
+
+Aynı projenin yerel ve Sepolia sürümlerini karıştırmamak için hangi bilgileri kontrol edersiniz?
+
+Öncelikle bağlı olduğum ağı, Chain ID bilgisini ve sözleşme adresini kontrol ederim. 
+Ayrıca kullanılan cüzdan hesabını, sözleşmenin deploy işlem hash’ini ve mevcut kayıt durumunu incelerim. Aynı kaynak kod kullanılsa bile farklı ağlarda deploy edilen sözleşmeler birbirinden bağımsızdır ve verileri ortak değildir.
+
