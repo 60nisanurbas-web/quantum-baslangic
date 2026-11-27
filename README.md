@@ -247,7 +247,9 @@ Status ise işlemin başarılı veya başarısız olduğunu gösterir.
 İşlem hash’inin oluşması işlemin başarıyla tamamlandığı anlamına gelmez. İşlem hâlâ bekliyor veya başarısız olmuş olabilir. Bu nedenle receipt ve status bilgilerinin kontrol edilmesi gerekir.
 
 **5. İmzalama, gönderme, bekleme, bloğa alınma ve sonuç kontrolünü gösteren akış şeması**
+
 ![İP 07 Akış Şeması](IP07-Akis-Semasi.png)
+
 quantum-baslangic dosyasına oluşturduğum akis semasını ekledim.
 
 ### Benim yorumum: “İşlem başarısız” ile “sonucunu öğrenemedim” neden farklıdır?
@@ -511,17 +513,6 @@ Her iki işlemin de başarılı olduğunu Sepolia Etherscan üzerinden doğrulad
 
 3. İşlemlerin karşılaştırılması
 
-Özellik	        ETH transferi	         USDC transferi
-Status	        Success	                 Success
-From	        Account 1	             Account 1
-To	            Account 2	             USDC sözleşmesi
-Value	        0.01 ETH	             0 ETH
-Input Data	    0x	                     transfer()
-Transaction Fee	0.0003069000034782 ETH	 0.000227668502580243 ETH
-Block	        12204971	             12204979
-Event	        Transfer	             Transfer
-Log Data	    10000000000000000	     5000000
-
 ETH transferinde To alanında doğrudan alıcı hesabın adresi bulunurken USDC transferinde USDC akıllı sözleşmesinin adresi bulunmaktadır.
 
 USDC transferinde Value alanının 0 ETH olmasının nedeni, Value alanının native ETH miktarını göstermesidir. Gönderilen 5 USDC ise token transferi ve event log alanlarında görülmektedir.
@@ -613,13 +604,14 @@ bağımsızdır. Bu nedenle takım sözleşmesindeki
 kayıtlar kendi oluşturduğum sözleşmeye otomatik
 olarak aktarılmaz.
 
+## IP 19 - 
 ## Remix ve Etherscan
 Remix ve Etherscan farklı arayüzler olsa da aynı
 blokzincir ağı üzerindeki akıllı sözleşmelerle
 etkileşim kurabilir. MetaMask aracılığıyla işlemler
 imzalanır ve Sepolia ağına gönderilir.
 
-## Benim Yorumum
+## IP 19 - Benim Yorumum
 Aynı cüzdan takım sözleşmesine ikinci kez
 kaydolamazken kendi sözleşmeme kaydolabildim.
 Çünkü iki sözleşmenin adresleri ve depolama
@@ -658,13 +650,26 @@ engellenmemektedir.
 ## IP 21 – Kapasite ve Kayıt Kuralları
 
 Test Sonuçları
+                     
+İlk geçerli kayıt	            
+Beklenen sonuç: Kabul, toplam 1 	
+Gözlemlenen sonuç: Kabul, toplam 1 oldu
 
-Deneme	                        Beklenen sonuç	    Gözlemlenen sonuç
-İlk geçerli kayıt	            Kabul, toplam 1 	Kabul, toplam 1 oldu
-Aynı hesaptan tekrar kayıt   	Ret, toplam 1	    Ret, toplam 1 oldu
-Yeni hesaptan boş ad        	Ret, toplam 1	    Ret, toplam 1 oldu
-İkinci ve üçüncü geçerli kayıt	Kabul, toplam 3	    Kabul, toplam 3 oldu
-Dördüncü farklı hesabın kaydı	Ret, toplam 3	    Ret, toplam 3 oldu
+Aynı hesaptan tekrar kayıt   	
+Beklenen sonuç: Ret, toplam 1	    
+Gözlemlenen sonuç: Ret, toplam 1 oldu
+
+Yeni hesaptan boş ad        	
+Beklenen sonuç: Ret, toplam 1	    
+Gözlemlenen sonuç: Ret, toplam 1 oldu
+
+İkinci ve üçüncü geçerli kayıt	
+Beklenen sonuç: Kabul, toplam 3	    
+Gözlemlenen sonuç: Kabul, toplam 3 oldu
+
+Dördüncü farklı hesabın kaydı	
+Beklenen sonuç: Ret, toplam 3	    
+Gözlemlenen sonuç: Ret, toplam 3 oldu
 
 Bütün testler Remix VM ortamında başarıyla gerçekleştirildi. Reddedilen işlemler toplam kayıt sayısını değiştirmedi.
 
